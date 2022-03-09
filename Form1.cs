@@ -44,7 +44,7 @@ namespace Lab3
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            textBox3.Text = "Результат работы программы ст. Михайловской";
+            textBox3.Text = "Результат работы программы ст. Михайловской" + Environment.NewLine + Environment.NewLine;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -55,15 +55,15 @@ namespace Lab3
                     throw new Exception("Вы не ввели значение.");
                 x = Convert.ToDouble(textBox1.Text);
                 m = Convert.ToDouble(textBox2.Text);
+                textBox3.Text += "При Х = " + x;
+                textBox3.Text += Environment.NewLine + "При M = " + m;
+                textBox3.Text += Environment.NewLine + "U = " + func(x, m) + Environment.NewLine;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
 
-            textBox3.Text += Environment.NewLine + "При Х = " + x;
-            textBox3.Text += Environment.NewLine + "При M = " + m;
-            textBox3.Text += Environment.NewLine + "U = " + func(x, m) + Environment.NewLine;
         }
 
         private void button2_Click(object sender, EventArgs e)
